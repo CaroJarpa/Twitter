@@ -1,38 +1,60 @@
-/* llamar a boton */
-var twett = document.getElementById('btn');
 
-/*cuando se haga click se va a ejecutar la funcion */
-twett.addEventListener('click', function(){
+function add(){
+	/*obtener el comentario ingresado en textarea*/
+	var tweet = document.getElementById('texto_ingresado').value;//
 
-/* Ingresar al textarea, con value se agarra ese texto ingresado por el usuario*/
-var texto_ingresado = document.getElementById('texto_ingresado').value;
+	/* limpiar el textarea*/
+	document.getElementById('texto_ingresado').value = "";//
 
-/*luego se limpia el textarea, con esto no permanece guardado el texto que se ingreso
-Para eso se ingresa un campo vacio a traves de '' */
-document.getElementById('texto_ingresado').value = '';
+	/*pasar comentario ingresado a contenedor que se creo en html*/
+	var contenedor = document.getElementById('receptor_texto');//
 
-/*a continuacion se llama al contenedor creado en el HTML*/
-var receptor_texto = document.getElementById('receptor_texto');
+	/*cada comentario pasa al div receptor de texto */
+	var newtweet = document.createElement('div');//
 
-/* tambien se crea el div que recepcionara el mensaje ingresado*/
-var newtwitt = document.createElement('div');
+	/*el nuevo comentario ira al div receptor de texto pero que sera blanco*/
+	newtweet.setAttribute('class', 'cajita')//
 
-/*No permitir que el usuario ingrese un valor vacio*/
-if (texto_ingresado.leng == 0 || texto_ingresado == null) { /*si el usuario ingresa un valor 
-	de longitud 0 o un valor nulo*/
-	return twett.disabled =true; /*se desactiva el boton*/
+	/*hay que crear un parrafo*/
+	var paragraph = document.createElement('p');//
 
-	}else}
+	/*no permitir que textarea no tenga un tweet*/
+	if(tweet == 0 || tweet== null){
+		alert('Tienes que escribir un tweet');
+		return false;
+	}
+	/*Se transforman las variables en un nodo de texto*/
+	var nodoText = document.createTextNode(tweet);
+	paragraph.appendChild(nodoText);
+	newtweet.appendChild(paragraph);
+	contenedor.appendChild(newtweet);
 }
 
-/*crear el nodo de texto de textarea*/
-var textNewTwitt = document.createTextNode(texto_ingresado);
+/*contador de texto*/
+function long(){
+	var twitter= document.getElementById('texto_ingresado').value;
+	var largo= twitter.length;
+	var max = 140;
+	var	contador = document.getElementById('contador');
+	contador.innerHTML = max-twitter.length ;
 
-/*crear elemento p que es un parrafo para contener el nodo de texto, 
-donde se guardara el texto ingresado por el usuario en textarea*/
-var guardar_texto = document.createElement("p");
+}
+function contar(){ 
+     document.forms[0].caracteres.value=document.forms[0].texto.value.length 
+}  
 
-/* a cada padre le entregare el hijo que le corresponde, 
-en este caso al padre texto_ingresado le agrego el hijo textNewTwitt*/
-texto_ingresado.appendChild(textNewTwitt);
+/*el textarea se agranda segun la cantidad de caracteres ingresados*/
 
+	var textarea = document.getElementById("texto_ingresado");
+	var limit = 140;
+
+	texto_ingresado.oninput = function() {
+ 	textarea.style.height = "";
+  	textarea.style.height = Math.min(textarea.scrollHeight, 300) + "px";
+}
+
+/*cambio de colores*/
+
+
+
+///////////////////////////////////////

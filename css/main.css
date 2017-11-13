@@ -54,7 +54,7 @@ p{
 }
 
 hr{
-	color:#696969;
+	color: #DCDCDC;
 	margin-top: 50px;
 }
 h3{
@@ -71,30 +71,38 @@ h3{
     background-color: white;
     margin-left: 680px;
     margin-top: -210px;
-    height: 210px;
+    height: auto;
     width: 495px;
+
     
 }
 
 textarea{
-    width: 477px;
-    height: 120px;
-    color: black;
-    border:none;
-    margin:0 auto;
+    width: 462px;
+    height: 107px;
     font-size: 13px;
-    margin-left: 10px;
     font-family: 'Anonymous Pro', monospace;
     resize: none;
+    padding-top: 10px;
+    padding-left: 15px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+
 
 }
 
 .segunda_linea{
 	margin-top: 10px;
 	width: 465px;
+    border-top-width: 0px;
+    margin-top: 15px;
+    color:#403F3B;
+
 }
 
-#btn{
+#click{
 	width: 110px;
 	height: 40px ;
 	margin: 15px;
@@ -104,18 +112,42 @@ textarea{
 	text-align: center;
 	border-radius: 4px;
 }
+
+#contador{
+	display: inline-block;
+	font-size: 20px;
+	font-family: 'Anonymous Pro', monospace;
+	padding-left: 285px;
+	margin-top: 0px;
+
+}
  /*Estilo de receptor de textos ingresados en el cuadro_ingreso*/
  .receptor_texto{
- 	width: 50px;
- 	color: black;
+ 	width: 100px; 
+ 	color: white;
  	text-align: right;
- 	margin-bottom: 300px;
+ 	font-family: 'Anonymous Pro', monospace;
+ 	margin left: 40px;
+ 	padding-top: 20px;
+ 	padding-left: 30px;
+ 	height: 80px;
+ 	border-color: white;
  }
 
- #receptor_texto div{
- 	margin-bottom: 40px;
+ .cajita{
  	background-color: white;
+ 	border-radius: 10px;
+    width: 870px;
+    padding-top: 0px;
+    border-top-width: 30px;
+    border-left-width: 30px;
+    padding-left: 55px;
+    margin-left: 225px;
+    height: 50px;
+
+
  }
+
 
 
 
